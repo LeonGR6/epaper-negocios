@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const clienteAxios = axios.create({
-    baseURL:'http://localhost/quiosco/laravel-quiosco/public/',
+    baseURL:'http://localhost/negocios/laravel-epaper/public',
     headers: {
         'Accept' : 'application/json',
         'X-Requested-With': 'XMLHttpRequest'
