@@ -7,11 +7,11 @@ export default function AdminSidebar() {
 
     return (
         <aside className="md:w-72 h-screen">
-            <div className="p-4">
+            <div className="p-2">
                 <img 
-                    src="/img/logo.svg"
+                    src="/img/epaper.png"
                     alt="imagen logotipo"
-                    className="w-40"
+                    className="w-72"
                 />
             </div>
 
@@ -20,10 +20,10 @@ export default function AdminSidebar() {
                 <Link to="/admin/productos" className='font-bold text-lg'>Productos</Link>
             </nav>
 
-            <div className='my-5 px-5'>
+            <div className='my-14 px-14'>
                 <button
                     type="button"
-                    className="text-center bg-red-500 w-full p-3 font-bold text-white truncate"
+                    className="text-center bg-red-500 w-15 p-2  font-bold text-white truncate rounded-md"
                     onClick={logout}
                 >
                     Cerrar Sesión

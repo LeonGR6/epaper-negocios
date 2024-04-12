@@ -8,6 +8,8 @@ import Ordenes from './views/Ordenes'
 import Productos from './views/Productos'
 import Registro from './views/Registro'
 
+
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -17,6 +19,7 @@ const router = createBrowserRouter([
                 index: true,
                 element: <Inicio />
             }
+         
         ]
     },
     {

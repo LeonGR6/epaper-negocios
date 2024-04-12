@@ -11,18 +11,18 @@ export default function ResumenProducto({producto}) {
           <div className="space-y-2">
             <p className="text-xl font-bold">{nombre}</p>
             <p className="text-lg font-bold ">Cantidad: {cantidad}</p>
-            <p className="text-lg font-bold text-amber-500">
+            <p className="text-lg  text-black">
               Precio: {formatearDinero(precio)}
             </p>
-            <p className="text-lg text-gray-700">
-              Subtotal: { formatearDinero(precio * cantidad)}
+            <p className="text-lg font-bold text-gray-700">
+              Total: { formatearDinero(precio * cantidad)}
             </p>
           </div>
     
           <div className="flex justify-between gap-2 pb-4">
             <button
               type="button"
-              className="bg-sky-700 p-2 text-white rounded-md font-bold uppercase shadow-md text-center"
+              className="bg-sky-600 p-2 text-white rounded-md font-bold uppercase shadow-md text-center"
               onClick={() => handleEditarCantidad(id)}
             >
               <svg
@@ -36,7 +36,7 @@ export default function ResumenProducto({producto}) {
             </button>
             <button
               type="button"
-              className="bg-red-700 p-2 text-white rounded-md font-bold uppercase shadow-md text-center"
+              className="bg-red-600 p-2 text-white rounded-md font-bold uppercase shadow-md text-center"
               onClick={() => handleEliminarProductoPedido(id)}
             >
               <svg

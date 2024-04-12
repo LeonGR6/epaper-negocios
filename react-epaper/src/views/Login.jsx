@@ -28,7 +28,7 @@ export default function Login() {
 
     return (
         <>
-            <h1 className="text-4xl font-black">Iniciar Sesión</h1>
+            <h1 className="text-4xl font-semibold">Iniciar Sesión</h1>
             <p>Para crear un pedido debes iniciar sesión</p>
 
             <div className="bg-white shadow-md rounded-md mt-10 px-5 py-10">
@@ -69,12 +69,14 @@ export default function Login() {
                         />
                     </div>
 
-        
+                    
                     <input
+                    
                         type="submit"
                         value="Iniciar Sesión"
-                        className="bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer"
+                        className=" bg-indigo-600 hover:bg-indigo-800 text-white     px-10 w-13 mt-6 p-2  font-bold cursor-pointer rounded-full"
                     />
+                    
                 </form>
             </div>
 

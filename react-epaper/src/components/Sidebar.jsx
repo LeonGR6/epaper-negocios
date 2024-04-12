@@ -11,13 +11,14 @@ export default function Sidebar() {
         <aside className="md:w-72">
             <div className="p-4">
                 <img 
-                    className="w-40"
-                    src="img/logo.svg"
-                    alt="Imagen Logo"
+                    className="w-80"
+                    src="img/epaper.png"
+                    alt="Imagen epaper"
                 />
             </div>
 
-            <p className="my-10 text-xl text-center">Hola: {user?.name}</p>
+            <p className="my-10 text-xl font-semibold text-center">Hola: {user?.name}  </p>
+            <p className="my-10 text-lg font-semibold text-center"> {user?.email} </p>
 
             <div className="mt-10">
                 {categorias.map( categoria => (
@@ -28,10 +29,10 @@ export default function Sidebar() {
                 ))}
             </div>
 
-            <div className="my-5 px-5">
+            <div className="my-32 px-14">
                 <button
                     type="button"
-                    className="text-center bg-red-500 w-full p-3 font-bold text-white truncate"
+                    className="text-center bg-red-500 w-15 px-8 p-2 font-bold text-white truncate rounded-md"
                     onClick={logout}
                 >
                     Cancelar Orden

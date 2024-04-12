@@ -2,6 +2,10 @@ import { formatearDinero } from "../helpers";
 import useQuisco from "../hooks/useQuiosco"
 import { useAuth } from "../hooks/useAuth";
 import ResumenProducto from "./ResumenProducto";
+import ReactDOM from 'react-dom';
+import React from 'react';
+
+const PayPalButton = window.paypal.Buttons.driver('react', { React, ReactDOM });
 
 export default function Resumen() {
     const {pedido, total, handleSubmitNuevaOrden} = useQuisco();
@@ -14,6 +18,25 @@ export default function Resumen() {
 
         handleSubmitNuevaOrden(logout);
     }
+    
+  const createOrder = (data, actions) => {
+    const numericTotalPrice = parseFloat(total);
+    if (!isNaN(numericTotalPrice))
+    
+      return actions.order.create({
+        purchase_units: [
+          {
+            amount: {
+              value: numericTotalPrice.toString(),
+            },
+          },
+        ],
+      });
+  };
+
+  const onApprove = (data, actions) => {
+    return actions.order.capture();
+  };
 
     return (
         <aside className="w-72 h-screen overflow-y-scroll p-5">
@@ -52,13 +75,20 @@ export default function Resumen() {
                     <input
                         type="submit"
                         className={`${comprobarPedido() ? 
-                            'bg-indigo-100' : 
-                            'bg-indigo-600 hover:bg-indigo-800' } 
-                            px-5 py-2 rounded uppercase font-bold text-white text-center w-full cursor-pointer`}
+                            'bg-green-100' : 
+                            'bg-green-400 hover:bg-green-500' } 
+                            px-5 py-2 rounded-md uppercase font-bold text-white text-center w-full cursor-pointer`}
                         value="Confirmar Pedido"
-                        disabled={comprobarPedido()}
-                    />
+                        disabled={comprobarPedido()} 
+                        />
+
+                <PayPalButton createOrder={(data, actions) => createOrder(data, actions)} onApprove={(data, actions) => onApprove(data, actions)} 
+                
+                />
+
+                
                 </div>
+              
             </form>
         </aside>
     )
